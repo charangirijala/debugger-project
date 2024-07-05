@@ -1,0 +1,14 @@
+ebody{
+  margin: 0;
+} 
+
+
+body{
+  margin: 0;
+}
+
+.price{
+  color: green;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

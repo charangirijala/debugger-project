@@ -1,0 +1,19 @@
+<apex:page>
+<apex:pageBlock title="User Status">
+     <apex:pageBlockSection columns="1">
+          {!$User.FirstName} {! $User.LastName}
+          ({!$User.Username})
+     </apex:pageBlockSection>
+     <p>{!$User.FirstName & ' ' & $User.LastName}</p>
+     <p>Today's Date is {! TODAY()}</p>
+     <apex:pageBlockSection columns="2">
+          <apex:pageBlockSectionItem>
+               <p>The current year is {!YEAR(TODAY())}</p>
+               <p>Lets find Maximum {!MAX(1,23456,7,2)}</p>
+               <p>Is it true? {! CONTAINS('salesforce.com','force.com')}</p>
+               <p>{! IF(CONTAINS('salesforce.com','force.com'),'Yes contains','No')}</p>
+          </apex:pageBlockSectionItem>
+     </apex:pageBlockSection>
+     
+</apex:pageBlock>
+</apex:page>
