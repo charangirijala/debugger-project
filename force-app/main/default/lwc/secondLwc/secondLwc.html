@@ -1,0 +1,14 @@
+<template>
+  <lightning-card title="Conditional Rendering">
+    <div class="slds-var-m-around_medium">
+      <lightning-button
+        variant="brand-outline"
+        label={displayName}
+        title="Primary action with lighter look"
+        onclick={handleClick}
+        class="slds-var-m-left_x-small"
+      ></lightning-button>
+      <div if:true={isVisible}>Welcome to the Course</div>
+    </div>
+  </lightning-card>
+</template>

@@ -20,4 +20,9 @@ export default class FirstLwc extends LightningElement {
   trackHandler(event) {
     this.address.city = event.target.value;
   }
+
+  users = ["John", "Sreshta"];
+  get firstuser() {
+    return this.users[0];
+  }
 }

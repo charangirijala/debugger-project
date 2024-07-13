@@ -1,0 +1,26 @@
+<template>
+  <lightning-card title="For Loop">
+    <div class="slds-var-m-around_medium">
+      <ul class="slds-list_dotted">
+        <template for:each={carList} for:item="car" for:index="index">
+          <li key={car}>{car}</li>
+        </template>
+      </ul>
+    </div>
+  </lightning-card>
+
+  <lightning-card title="Iterator Demo">
+    <div class="slds-var-m-around_medium">
+      <ul class="slds-list_dotted">
+        <template iterator:ceo={ceoList}>
+          <li key={ceo.value.id}>
+            <div>
+              <strong>{ceo.value.company} </strong>
+              {ceo.value.ceoName}
+            </div>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </lightning-card>
+</template>

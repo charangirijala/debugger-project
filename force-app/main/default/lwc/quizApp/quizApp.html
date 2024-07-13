@@ -1,0 +1,56 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <lightning-card title="Quiz App">
+    <div class="slds-var-m-around_medium">
+      <form>
+        <template for:each={myQuestions} for:item="quiz">
+          <div key={quiz.id}>
+            <Strong>{quiz.question}</Strong>
+            <div class="slds-grid slds-gutters slds-p-bottom_medium">
+              <div class="slds-col">
+                <input
+                  type="radio"
+                  name={quiz.id}
+                  value="a"
+                  onchange={changeHandler}
+                />
+                {quiz.answers.a}
+              </div>
+              <div class="slds-col">
+                <input
+                  type="radio"
+                  name={quiz.id}
+                  value="b"
+                  onchange={changeHandler}
+                />{quiz.answers.b}
+              </div>
+              <div class="slds-col">
+                <input
+                  type="radio"
+                  name={quiz.id}
+                  value="c"
+                  onchange={changeHandler}
+                />{quiz.answers.a}
+              </div>
+            </div>
+          </div>
+        </template>
+        <lightning-button
+          variant="success"
+          label="Submit"
+          title="Successful action"
+          onclick={onSubmit}
+          disabled={isDisabled}
+        ></lightning-button>
+        <lightning-button
+          variant="destructive"
+          label="Reset"
+          title="Destructive action"
+          onclick={resetHandler}
+          class="slds-m-left_x-small"
+        ></lightning-button>
+      </form>
+    </div>
+    <div>Total score is : {score}</div>
+  </lightning-card>
+</template>
