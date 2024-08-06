@@ -1,0 +1,17 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <lightning-card icon-name="standard:account" variant="base" title="Carousel">
+    <lightning-carousel disable-auto-scroll scroll-duration="5">
+      <template for:each={carouselData} for:item="item">
+        <lightning-carousel-image
+          key={item.header}
+          src={item.src}
+          header={item.header}
+          description={item.description}
+          alternative-text="First card accessible description."
+          href="javascript:void(0);"
+        ></lightning-carousel-image>
+      </template>
+    </lightning-carousel>
+  </lightning-card>
+</template>
