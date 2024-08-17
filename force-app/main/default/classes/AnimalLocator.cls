@@ -9,15 +9,11 @@ global class AnimalLocator {
     Map<String, Object> animal = new Map<String, Object>();
     HttpResponse res = http.send(req);
 
-    if (res.getStatusCode() == 200) {
-      Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(
-        res.getBody()
-      );
-      animal = (Map<String, Object>) results.get('animal');
+    Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(
+      res.getBody()
+    );
+    animal = (Map<String, Object>) results.get('animal');
 
-      return (String) animal.get('name');
-    }
-
-    return null;
+    return String.valueOf(animal.get('name'));
   }
 }

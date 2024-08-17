@@ -1,0 +1,32 @@
+<template>
+  <lightning-card
+    icon-name="action:manage_perm_sets"
+    title="Numerator"
+    variant="base"
+  >
+    <p class="slds-text-align_center slds-var-m-vertical_medium">
+      Prior Count:
+      <lightning-formatted-number
+        value={priorCount}
+      ></lightning-formatted-number>
+    </p>
+
+    <p class="slds-text-align_center slds-var-m-vertical_medium">
+      Count:<lightning-formatted-number
+        value={counter}
+      ></lightning-formatted-number>
+    </p>
+    <p>Hi</p>
+    <lightning-button
+      onclick={handleIncrement}
+      label="Incremenr"
+    ></lightning-button>
+    <c-controls
+      class="slds-show slds-is-relative"
+      onadd={handleIncrement}
+      onsubtract={handleDecrement}
+      onmultiply={handleMultiply}
+    >
+    </c-controls>
+  </lightning-card>
+</template>
