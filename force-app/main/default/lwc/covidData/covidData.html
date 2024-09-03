@@ -1,0 +1,20 @@
+<template>
+  <lightning-card variant="base">
+    <div class="slds-var-m-around_medium">
+      <lightning-input
+        type="text"
+        label="Enter some text"
+        onchange={onCountryCodeChange}
+      ></lightning-input>
+      <lightning-button
+        type="submit"
+        title="Get Covid Info"
+        name="Get Covid Info"
+        label="Get Covid Info"
+        variant="brand"
+        class="slds-var-m-left_x-small"
+        onclick={getCovidDetails}
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>
