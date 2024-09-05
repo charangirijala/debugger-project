@@ -1,20 +1,36 @@
 <template>
   <lightning-card variant="base">
     <div class="slds-var-m-around_medium">
+      <h1 style="font-weight: 900; font-size: larger">Covid Cases Tracker</h1>
       <lightning-input
         type="text"
-        label="Enter some text"
+        label="Enter Country Code"
         onchange={onCountryCodeChange}
       ></lightning-input>
-      <lightning-button
-        type="submit"
-        title="Get Covid Info"
-        name="Get Covid Info"
-        label="Get Covid Info"
-        variant="brand"
-        class="slds-var-m-left_x-small"
-        onclick={getCovidDetails}
-      ></lightning-button>
+      <div class="slds-var-m-top_medium slds-text-align_right">
+        <lightning-button
+          type="submit"
+          title="Get Covid Info"
+          name="Get Covid Info"
+          label="Get Covid Info"
+          variant="brand"
+          onclick={getCovidDetails}
+        ></lightning-button>
+      </div>
+      <div lwc:if={isError} class="slds-var-m-top_medium slds-text-color_error">
+        <p>Oops!! Something went wrong</p>
+      </div>
+    </div>
+    <div lwc:if={covidData}>
+      <template for:each={covidData} for:item="covid">
+        <div class="slds-var-m-around_medium" key={covid.country}>
+          <h3>Country : {covid.country}</h3>
+          <p>Total Cases: {covid.confirmed}</p>
+          <p>Total Deaths: {covid.deaths}</p>
+          <p>Total Recovered: {covid.recovered}</p>
+          <p>Critical Cases: {covid.critical}</p>
+        </div></template
+      >
     </div>
   </lightning-card>
 </template>

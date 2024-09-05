@@ -1,6 +1,6 @@
 public class CovidInfoREST {
   @AuraEnabled(cacheable=true)
-  public static String covidRESTCall(String countryCode) {
+  public static List<Object> covidRESTCall(String countryCode) {
     Http http = new Http();
     HttpRequest req = new HttpRequest();
     String endpoint =
@@ -15,7 +15,6 @@ public class CovidInfoREST {
     req.setHeader('x-rapidapi-host', 'covid-19-data.p.rapidapi.com');
     HttpResponse res = http.send(req);
     List<Object> result = (List<Object>) JSON.deserializeUntyped(res.getBody());
-    Integer resCode = res.getStatusCode();
-    return 'Success';
+    return result;
   }
 }
